@@ -23,15 +23,18 @@ export class CreateAdmin1654394200564 implements MigrationInterface {
                     },
                     {
                         name: 'name',
-                        type: 'varchar'
+                        type: 'varchar',
+                        isNullable: true 
                     },
                     {
                         name: 'gym_email',
-                        type: 'varchar'
+                        type: 'varchar',
+                        isNullable: true
                     },
                     {
                         name: 'gym_name',
-                        type: 'varchar'
+                        type: 'varchar',
+                        isNullable: true
                     },
                     {
                         name: 'created_at',
