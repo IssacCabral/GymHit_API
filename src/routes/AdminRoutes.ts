@@ -6,6 +6,6 @@ import auth from "../middleware/Auth";
 const adminRouter = Router()
 
 adminRouter.post('/admin', new CreateAdminController().handle)
-adminRouter.get('/admins', auth,  new GetAllAdminController().handle)
+adminRouter.get('/admins', new GetAllAdminController().handle)
 
 export default adminRouter

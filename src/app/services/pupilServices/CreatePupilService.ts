@@ -14,9 +14,14 @@ export class CreatePupilService{
         const pupilRepository = dataSource.getRepository(Pupil)
         const adminRepository = dataSource.getRepository(Admin)
 
+        if(await pupilRepository.findOne({where: {cpf}})){
+            return new Error('Cpf already exists')
+        }
+
         if(!await adminRepository.findOne({where: {id: admin_id}})){
             return new Error('Admin does not exists')
         }
+
 
         const pupil = pupilRepository.create({
             name,

@@ -6,8 +6,6 @@ export class GetAllAdminController{
         const service = new GetAllAdminService()
         const admins = await service.execute()
         
-        console.log('Admin logado: ', request.admin.email)
-
         return response.json(admins)
     }
 }
