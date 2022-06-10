@@ -14,7 +14,10 @@ export class Instructor{
     cpf: number
 
     @Column()
-    number: number
+    number: string
+
+    @Column()
+    admin_id: string
 
     @ManyToOne(() => Admin)
     @JoinColumn({name: 'admin_id'})
