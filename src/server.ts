@@ -4,7 +4,7 @@ import './database/data-source'
 import mainRouter from "./routes/mainRouter"
 
 const app = express()
-const PORT = process.env.TYPEORM_SERVERPORT
+const PORT = process.env.GYMHIT_PORT
 
 app.use(express.json())
 app.use(mainRouter)
