@@ -35,9 +35,13 @@ class Token{
         const correctPass = bcrypt.compareSync(password, adminExists.password) 
         if(!correctPass) return response.status(401).json('Invalid password')
 
-        const token = jwt.sign({admin_id: adminExists.id, email: adminExists.email}, process.env.SECRET, {expiresIn: '1hr'})
+        const accessToken = jwt.sign({admin_id: adminExists.id, email: adminExists.email}, process.env.SECRET_JWT_KEY, {expiresIn: '1d'})
 
-        return response.status(200).json({token})
+        return response.status(200).json({
+            accessToken,
+            fantasy_name: adminExists.fantasy_name,
+            email: adminExists.email
+        })
     }
 }
 

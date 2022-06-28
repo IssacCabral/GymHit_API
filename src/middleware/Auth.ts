@@ -10,7 +10,7 @@ export default async function auth(request: Request, response: Response, next: N
 
     const token = authToken.split(' ')[1]
     
-    jwt.verify(token, process.env.SECRET, (error, data) => {
+    jwt.verify(token, process.env.SECRET_JWT_KEY, (error, data) => {
         if(error) return response.status(401).json("Invalid token")
         request.admin = data as any
         next()

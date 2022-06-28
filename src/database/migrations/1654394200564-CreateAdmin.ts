@@ -22,24 +22,54 @@ export class CreateAdmin1654394200564 implements MigrationInterface {
                         type: 'varchar'
                     },
                     {
-                        name: 'name',
+                        name: 'cnpj',
                         type: 'varchar',
-                        isNullable: true 
+                        isNullable: false
                     },
                     {
-                        name: 'gym_email',
+                        name: 'fantasy_name',
                         type: 'varchar',
-                        isNullable: true
+                        isNullable: false
                     },
                     {
-                        name: 'gym_name',
+                        name: 'coorporate_name',
                         type: 'varchar',
-                        isNullable: true
+                        isNullable: false
+                    },
+                    {
+                        name: 'telephone',
+                        type: 'varchar',
+                        isNullable: false
+                    },
+                    {
+                        name: 'city',
+                        type: 'varchar',
+                        isNullable: false
+                    },
+                    {
+                        name: 'street',
+                        type: 'varchar',
+                        isNullable: false
+                    },
+                    {
+                        name: 'district',
+                        type: 'varchar',
+                        isNullable: false
+                    },
+                    {
+                        name: 'number',
+                        type: 'numeric',
+                        isNullable: false
                     },
                     {
                         name: 'created_at',
                         type: 'timestamp',
                         default: "now()"
+                    },
+                    {
+                        name: 'updated_at',
+                        type: 'timestamp',
+                        default: 'now()'
                     }
                 ]
             })
