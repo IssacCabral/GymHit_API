@@ -11,13 +11,16 @@ export class Pupil{
     name: string
 
     @Column()
-    cpf: number
-
-    @Column()
-    number: string
+    cpf: string
 
     @Column()
     admin_id: string
+
+    @Column()
+    email: string;
+
+    @Column()
+    telephone: string;
 
     @ManyToOne(() => Admin)
     @JoinColumn({name: 'admin_id'})

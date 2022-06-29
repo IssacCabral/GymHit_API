@@ -3,8 +3,7 @@ import { CreateAdminService } from '../../services/adminServices/CreateAdminServ
 
 export class CreateAdminController{
     async handle(request: Request, response: Response){
-        const {email, password} = request.body
-        const dataMandatory = ['email', 'password']
+        const dataMandatory = ['email', 'password', 'city', 'street', 'fantasy_name', 'coorporate_name', 'cnpj', 'number', 'district', 'telephone']
         const errors: Array<any> = []
 
         dataMandatory.forEach(element => {
@@ -14,12 +13,13 @@ export class CreateAdminController{
                     message: `The ${element} field is required`
                 })
             }
-        })
+        });
 
         if(errors.length > 0) {return response.json(errors)}
 
         const service = new CreateAdminService()
-        const result = await service.execute({email, password})
+
+        const result = await service.execute(request.body);
 
         return result instanceof Error ? response.status(400).json(result.message) : response.status(201).json(result)
     }

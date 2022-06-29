@@ -18,11 +18,15 @@ export class CreatePupil1654428308459 implements MigrationInterface {
                     },
                     {
                         name: 'cpf',
-                        type: 'numeric',
+                        type: 'varchar',
                         isUnique: true
                     },
                     {
-                        name: 'number',
+                        name: 'telephone',
+                        type: 'varchar'
+                    },
+                    {
+                        name: 'email',
                         type: 'varchar'
                     },
                     {
@@ -31,6 +35,11 @@ export class CreatePupil1654428308459 implements MigrationInterface {
                     },
                     {
                         name: 'created_at',
+                        type: 'timestamp',
+                        default: 'now()'
+                    },
+                    {
+                        name: 'updated_at',
                         type: 'timestamp',
                         default: 'now()'
                     }

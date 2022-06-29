@@ -1,4 +1,4 @@
-import {Entity, Column, CreateDateColumn, PrimaryColumn} from 'typeorm'
+import {Entity, Column, CreateDateColumn, PrimaryColumn, UpdateDateColumn, PrimaryGeneratedColumn} from 'typeorm'
 import {v4 as uuid} from 'uuid'
 
 @Entity('admin')
@@ -13,16 +13,34 @@ export class Admin{
     password: string
 
     @Column()
-    name: string
+    cnpj: string;
+    
+    @Column()
+    fantasy_name: string
 
     @Column()
-    gym_email: string
+    coorporate_name: string
 
     @Column()
-    gym_name: string
+    telephone: string;
+
+    @Column()
+    city: string;
+
+    @Column()
+    street: string;
+
+    @Column()
+    district: string;
+
+    @Column()
+    number: number;
 
     @CreateDateColumn()
     created_at: Date
+
+    @UpdateDateColumn()
+    updated_at: Date;
 
     constructor(){
         if(!this.id){

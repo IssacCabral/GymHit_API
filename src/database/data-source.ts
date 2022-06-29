@@ -5,13 +5,14 @@ env.config()
 
 const dataSource = new DataSource({
     type: 'postgres',
-    host: process.env.TYPEORM_HOST,
-    port: Number(process.env.TYPEORM_PORT),
-    username: process.env.TYPEORM_USERNAME,
-    password: process.env.TYPEORM_PASSWORD,
-    database: process.env.TYPEORM_DATABASE,
+    host: process.env.POSTGRES_HOST,
+    username: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD,
+    database: process.env.POSTGRES_DB,
     migrations: [__dirname + '/migrations/*.ts'],
-    entities: ['src/app/entities/*.ts']
+    entities: ['src/app/entities/*.ts'],
+    migrationsRun: true,
+    logging: true,
 })
 
 dataSource.initialize()
